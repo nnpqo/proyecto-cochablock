@@ -1,26 +1,313 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer theme {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Colores principales inspirados en naturaleza */
+  --color-primary-50: #e6fff0;
+  --color-primary-100: #c6f7d9;
+  --color-primary-200: #8fe2b6;
+  --color-primary-300: #4fd08f;
+  --color-primary-400: #2ea86e;
+  --color-primary-500: #15803f;
+  --color-primary-600: #0e5d2f;
+  --color-primary-700: #0b4b28;
+  --color-primary-800: #083a20;
+  --color-primary-900: #062f18;
+    
+    /* Colores tierra/café */
+  --color-earth-50: #fff6ec;
+  --color-earth-100: #ffe9d1;
+  --color-earth-200: #ffd1a8;
+  --color-earth-300: #ffb06b;
+  --color-earth-400: #ff9438;
+  --color-earth-500: #e67420;
+  --color-earth-600: #b75918;
+  --color-earth-700: #8f4214;
+  --color-earth-800: #6b2f10;
+  --color-earth-900: #4a210c;
+    
+    /* Colores salvia/verde suave */
+  --color-sage-50: #f3fff6;
+  --color-sage-100: #e6ffed;
+  --color-sage-200: #c9f2d5;
+  --color-sage-300: #9fd7ad;
+  --color-sage-400: #6fb581;
+  --color-sage-500: #4a8e5f;
+  --color-sage-600: #357047;
+  --color-sage-700: #29583a;
+  --color-sage-800: #223f2b;
+  --color-sage-900: #172b1e;
+    
+    /* Colores de acento */
+    --color-accent-yellow: #fbbf24;
+    --color-accent-orange: #fb923c;
+    --color-accent-cream: #fef3c7;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Animaciones personalizadas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+.delay-900 { animation-delay: 900ms; }
+.delay-1000 { animation-delay: 1000ms; }
+.delay-1200 { animation-delay: 1200ms; }
+.delay-1300 { animation-delay: 1300ms; }
+.delay-1400 { animation-delay: 1400ms; }
+.delay-1600 { animation-delay: 1600ms; }
+
+/* Animaciones personalizadas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Clases de utilidad personalizadas */
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-gentle {
+    animation: pulse-gentle 3s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+
+  /* Gradientes personalizados */
+  .gradient-earth {
+    background: linear-gradient(135deg, var(--color-earth-400) 0%, var(--color-earth-600) 100%);
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary-400) 0%, var(--color-primary-600) 100%);
+  }
+
+  .gradient-sage {
+    background: linear-gradient(135deg, var(--color-sage-300) 0%, var(--color-sage-500) 100%);
+  }
+
+  .gradient-nature {
+    background: linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-sage-400) 50%, var(--color-earth-400) 100%);
+  }
+
+  /* Efectos de glassmorphism */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Sombras personalizadas */
+  .shadow-earth {
+    box-shadow: 0 10px 30px rgba(139, 93, 47, 0.3);
+  }
+
+  .shadow-primary {
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+  }
+
+  .shadow-sage {
+    box-shadow: 0 10px 30px rgba(100, 130, 100, 0.3);
+  }
+
+  /* Texto con efectos */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-800));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-earth {
+    background: linear-gradient(135deg, var(--color-earth-600), var(--color-earth-800));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Botones estilo primario/terciario con tonos cafe/verde */
+  .btn-ecoblock-primary {
+    background: linear-gradient(90deg, var(--color-earth-600), var(--color-primary-600));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(22, 100, 43, 0.18);
+    transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+  }
+  .btn-ecoblock-primary:hover { transform: translateY(-3px) scale(1.02); opacity: 0.98; }
+
+  .btn-ecoblock-outline {
+    background: transparent;
+    color: var(--color-earth-700);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    border: 2px solid rgba(79,106,79,0.12);
+    font-weight: 600;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+  }
+  .btn-ecoblock-outline:hover { background: rgba(79,106,79,0.08); transform: translateY(-2px); }
+
+  /* Wave divider utility */
+  .wave-divider {
+    display: block;
+    width: 100%;
+    line-height: 0;
+  }
+
+  .product-card {
+    border-radius: 1rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,249,244,0.8));
+    box-shadow: 0 12px 30px rgba(70,50,30,0.12);
+    padding: 1.25rem;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(70,50,30,0.18); }
+
+  /* Secciones con fondo cafe/verde alternado */
+  .section-earth { background: linear-gradient(180deg, var(--color-earth-50), var(--color-earth-100)); }
+  .section-sage { background: linear-gradient(180deg, var(--color-sage-50), var(--color-sage-100)); }
 }
