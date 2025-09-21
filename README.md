@@ -42,5 +42,7 @@ Si todo está bien, verás información del nodo sincronizado en la red Mammoth.
 # contrato de token:
 https://eth-sepolia.blockscout.com/address/0x318bfE4910Bd7d2554F7354c1311E924B36B6A1e?tab=read_write_contract
 
+https://github.com/j3tjet/civecoin
+
 # Instalar dependencias del proyecto en ambos repositorios
 npm i
