@@ -10,7 +10,7 @@ export default function PlantCareSection() {
     {
       icon: "🚶‍♂️", 
       title: "Acércate al Lugar",
-      description: "Lleva tu basura clasificada a uno de nuestros centros de acopio"
+      description: "Lleva tu basura clasificada a nuestro centro de acopio"
     },
     {
       icon: "💳",
@@ -153,7 +153,7 @@ export default function PlantCareSection() {
           </div>
           <div className="text-white animate-fadeInUp delay-800">
             <div className="text-3xl font-bold text-emerald-300 mb-2">10+</div>
-            <p className="text-emerald-200">Centros de Acopio</p>
+            <p className="text-emerald-200">Empresas Aliadas</p>
           </div>
           <div className="text-white animate-fadeInUp delay-1000">
             <div className="text-3xl font-bold text-emerald-300 mb-2">∞</div>
