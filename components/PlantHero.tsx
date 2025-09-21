@@ -40,13 +40,16 @@ export default function PlantHero() {
 
           {/* Enhanced CTA section */}
           <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fadeInUp delay-600">
-            <button className="group relative bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-10 py-5 rounded-2xl text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl overflow-hidden">
-              <span className="relative z-10 flex items-center">
-                Comenzar a Ganar
-                <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
+            <button
+  onClick={() => (window.location.href = "http://localhost:3001/")}
+  className="group relative bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-10 py-5 rounded-2xl text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl overflow-hidden"
+>
+  <span className="relative z-10 flex items-center">
+    Comenzar a Ganar
+    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+  </span>
+  <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</button>
             
             <button 
               onClick={() => window.open('https://maps.google.com/?q=Centro+de+Acopio+Civecoin+Cochabamba+Bolivia', '_blank')}
