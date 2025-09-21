@@ -54,7 +54,6 @@ export default function PlantHero() {
             >
               <span className="flex items-center">
                 📍 Ver Punto de Acopio
-                <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">🗺️</span>
               </span>
             </button>
           </div>
