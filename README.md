@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Instalación de Celestia Node
 
-## Getting Started
+Ejecuta el script oficial para instalar la versión v0.21.9-mammoth-v0.0.17:
 
-First, run the development server:
+bash -c "$(curl -sL https://docs.celestia.org/celestia-node.sh)" -- -v v0.21.9-mammoth-v0.0.17
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Esto descargará e instalará el binario celestia.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🗄️ Inicializar el nodo (crear base de datos)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Antes de arrancar el nodo, debes inicializar la base de datos local:
 
-## Learn More
+celestia light init --p2p.network mammoth
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Esto creará los directorios de configuración y almacenamiento en:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+~/.celestia-light-mammoth
 
-## Deploy on Vercel
+▶️ Iniciar el nodo Light
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ejecuta el nodo conectándolo al core endpoint global:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+celestia light start \
+  --p2p.network mammoth \
+  --core.ip global.grpc.mamochain.com \
+  --core.port 9090 \
+  --rpc.skip-auth
+
+✅ Verificar que funciona
+
+En otra terminal, prueba que el nodo responde:
+
+curl http://localhost:26658/status
+
+
+Si todo está bien, verás información del nodo sincronizado en la red Mammoth.
+
+# segundo repositorio :
+(https://github.com/Estemen123/HacktonCochablock)
+# contrato de token:
+https://eth-sepolia.blockscout.com/address/0x318bfE4910Bd7d2554F7354c1311E924B36B6A1e?tab=read_write_contract
+
+# Instalar dependencias del proyecto en ambos repositorios
+npm i
